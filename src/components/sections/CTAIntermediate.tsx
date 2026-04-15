@@ -63,33 +63,6 @@ export default function CTAIntermediate() {
             Atendimento Imediato com os Melhores Preços!
           </motion.p>
 
-          {/* Trust Badges */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.25 }}
-            className="flex flex-wrap justify-center gap-4 mb-10"
-          >
-            {[
-              "Chegada em 20 min",
-              "Preço Justo",
-              "Atendimento 24h",
-              "+500 Clientes",
-            ].map((badge, index) => (
-              <motion.span
-                key={badge}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-                className="bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/20"
-              >
-                {badge}
-              </motion.span>
-            ))}
-          </motion.div>
-
           {/* CTA Buttons - High Conversion */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

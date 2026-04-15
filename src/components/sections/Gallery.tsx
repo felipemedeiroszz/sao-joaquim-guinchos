@@ -35,7 +35,7 @@ export default function Gallery() {
           </p>
         </motion.div>
 
-        {/* Gallery Grid */}
+        {/* Gallery Grid - Uniform 3x2 */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {galleryImages.map((image, index) => (
             <motion.div
@@ -45,16 +45,15 @@ export default function Gallery() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className={`group relative cursor-pointer overflow-hidden rounded-2xl ${
-                index === 0 || index === 3 ? "md:col-span-2 md:row-span-2" : ""
-              }`}
+              className="group relative cursor-pointer overflow-hidden rounded-2xl"
               onClick={() => setSelectedImage(image.src)}
             >
-              <div className={`relative bg-slate-800 ${index === 0 || index === 3 ? "aspect-[16/9]" : "aspect-square"}`}>
+              <div className="relative bg-slate-800 aspect-square">
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 

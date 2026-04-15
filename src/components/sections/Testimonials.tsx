@@ -208,11 +208,32 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} index={index} />
           ))}
         </div>
+
+        {/* CTA para avaliação no Google */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <p className="text-gray-400 mb-4">Já usou nossos serviços?</p>
+          <motion.a
+            href="https://g.page/r/CYcneEEvjOrSEAE/review"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-all"
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+            <span>Deixe sua avaliação no Google</span>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

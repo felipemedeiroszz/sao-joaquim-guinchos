@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
+import Image from "next/image";
 
 const WHATSAPP_NUMBER = "5516992084343";
 const PHONE_NUMBER = "+5516992084343";
@@ -23,14 +24,21 @@ export default function MobileActionBar() {
           className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-400 text-slate-900 font-bold py-3 px-4 rounded-xl shadow-lg"
           whileTap={{ scale: 0.95 }}
         >
-          <MessageCircle className="w-5 h-5" />
+          <div className="w-5 h-5 relative">
+            <Image
+              src="/whatsapp.png"
+              alt="WhatsApp"
+              fill
+              className="object-contain"
+            />
+          </div>
           <span>WhatsApp</span>
         </motion.a>
 
-        {/* Call Button */}
+        {/* Call Button - Amarelo */}
         <motion.a
           href={`tel:${PHONE_NUMBER}`}
-          className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold py-3 px-4 rounded-xl shadow-lg"
+          className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-300 text-slate-900 font-bold py-3 px-4 rounded-xl shadow-lg"
           whileTap={{ scale: 0.95 }}
         >
           <Phone className="w-5 h-5" />

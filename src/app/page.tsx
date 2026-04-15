@@ -1,4 +1,4 @@
-import Hero, { ScrollToTop } from "@/components/sections/Hero";
+import Hero from "@/components/sections/Hero";
 import Trust from "@/components/sections/Trust";
 import Services from "@/components/sections/Services";
 import CTAIntermediate from "@/components/sections/CTAIntermediate";
@@ -23,7 +23,6 @@ export default function Home() {
       <Footer />
       <FloatingWhatsApp />
       <MobileActionBar />
-      <ScrollToTop />
     </main>
   );
 }

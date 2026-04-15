@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, ChevronUp } from "lucide-react";
+import { Phone } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -16,47 +16,6 @@ const backgroundImages = [
   "/guincho5.jpeg",
   "/guincho6.jpeg",
 ];
-
-// Scroll to top component
-export function ScrollToTop() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  return (
-    <motion.button
-      onClick={scrollToTop}
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{ 
-        opacity: isVisible ? 1 : 0, 
-        scale: isVisible ? 1 : 0,
-        y: isVisible ? 0 : 20
-      }}
-      transition={{ duration: 0.3 }}
-      className="fixed bottom-24 right-4 lg:bottom-8 lg:right-8 z-50 w-12 h-12 bg-yellow-400 hover:bg-yellow-300 text-slate-900 rounded-full shadow-lg flex items-center justify-center transition-colors"
-    >
-      <ChevronUp className="w-6 h-6" />
-    </motion.button>
-  );
-}
 
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -158,12 +117,12 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 w-full max-w-lg"
           >
-            {/* WhatsApp Button - Clean */}
+            {/* WhatsApp Button - Clean - Hidden on mobile */}
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-400 text-white font-bold text-base sm:text-lg px-6 py-4 rounded-xl shadow-xl transition-all flex-1"
+              className="hidden sm:flex items-center justify-center gap-3 bg-green-500 hover:bg-green-400 text-white font-bold text-base sm:text-lg px-6 py-4 rounded-xl shadow-xl transition-all flex-1"
             >
               <div className="w-6 h-6 relative shrink-0">
                 <Image
